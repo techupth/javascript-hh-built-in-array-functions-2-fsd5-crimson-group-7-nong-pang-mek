@@ -374,4 +374,19 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+const member = bills.filter((item) => {
+  return item.member !== null;
+});
+
+const billMembers = member.map((item) => {
+  return item.member.name;
+});
+
+const memberName = [];
+for (let i = 0; i < billMembers.length; i++) {
+  if (!memberName.includes(billMembers[i])) {
+    memberName.push(billMembers[i]);
+  }
+}
+const totalMembers = memberName.length;
+console.log(totalMembers);
