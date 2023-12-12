@@ -374,4 +374,13 @@ const bills = [
 ];
 
 // Start coding here
-const billMembers;
+// เก็บรายชื่อ member ทุกคนืี่อยู่ใน bills
+//
+const billMembersFilter = bills.filter((bill) => {
+  return bill.member !== null;
+});
+const billMemebers = billMembersFilter.map((bill) => {
+  return bill.member.name;
+});
+console.log(billMembersFilter);
+console.log(billMemebers);

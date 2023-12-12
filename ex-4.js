@@ -374,4 +374,17 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+const totalMembers = bills
+  .filter((bill) => {
+    return bill.member !== null;
+  })
+  .map((bill) => {
+    return bill.member.name;
+  })
+  .reduce((uniqueWords, word) => {
+    if (!uniqueWords.includes(word)) {
+      uniqueWords.push(word);
+    }
+    return uniqueWords;
+  }, []).length;
+console.log(`Unique Members Count: ${totalMembers}`);
